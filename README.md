@@ -1,2 +1,3 @@
 # DataStructureVisualization
-visualizando estruturas de dados em c++ com libs gráficas
+estruturas em c/c++
+visualização de estruturas de dados em c/c++ com libs gráficas como opengl e sdl
