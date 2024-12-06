@@ -63,7 +63,7 @@ struct BST
  *          -2 PASSAR A ARVORE A QUAL DESEJA INSERIR NOVO NÓ
  *          -3 PASSAR VALOR A SER INSERIDO NO NOVO NÓ DA ARVORE PASSADA NO PARAMETRO 2
  */
-BST *inserirBST(BST *arvore_passada, int valor_inserir);
+struct BST *inserirBST(struct BST *arvore_passada, int *valor_inserir);
 
 
 /** DEFINICAO PARA MANIPULACAO DA ARVORE 2
@@ -79,7 +79,7 @@ BST *inserirBST(BST *arvore_passada, int valor_inserir);
  *          -2 PASSAR A ARVORE A QUAL DESEJA BUSCAR O NÓ DESEJADO
  *          -3 PASSAR VALOR/CHAVE DE BUSCA PARA ENCONTRAR O NÓ DA ARVORE PASSADA NO PARAMETRO 2
  */
-BST *buscarBST(BST *arvore_passada, int valor_inserir);
+struct BST *buscarBST(struct BST *arvore_passada, int *valor_inserir);
 
 
 /** DEFINICAO PARA MANIPULACAO DA ARVORE 3
@@ -93,7 +93,7 @@ BST *buscarBST(BST *arvore_passada, int valor_inserir);
  *          -2 PASSAR A ARVORE A QUAL DESEJA REMOVER O NÓ DESEJADO
  *          -3 PASSAR VALOR/CHAVE DE BUSCA PARA ENCONTRAR O NÓ DA ARVORE PASSADA NO PARAMETRO 2
  */
-BST *removerBST(BST *arvore_passada, int valor_remover);
+struct BST *removerBST(struct BST *arvore_passada, int *valor_remover);
 
 
 /** DEFINICAO PARA IMPRESSAO DE ARVORE 1
@@ -106,7 +106,7 @@ BST *removerBST(BST *arvore_passada, int valor_remover);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-BST *imprimirBST(BST *arvore_passada);
+struct BST *imprimirBST(struct BST *arvore_passada);
 
 
 
@@ -120,7 +120,7 @@ BST *imprimirBST(BST *arvore_passada);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-BST *imprimirPreOrderBST(BST *arvore_passada);
+struct BST *imprimirPreOrderBST(struct BST *arvore_passada);
 
 /** DEFINICAO PARA IMPRESSAO DE ARVORE 1.2
  *      - IMPRIMIR NA ARVORE
@@ -132,7 +132,7 @@ BST *imprimirPreOrderBST(BST *arvore_passada);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-BST *imprimirInOrderBST(BST *arvore_passada);
+struct BST *imprimirInOrderBST(struct BST *arvore_passada);
 
 /** DEFINICAO PARA IMPRESSAO DE ARVORE 1.3
  *      - IMPRIMIR NA ARVORE
@@ -144,6 +144,11 @@ BST *imprimirInOrderBST(BST *arvore_passada);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-BST *imprimirPosOrderBST(BST *arvore_passada);
+struct BST *imprimirPosOrderBST(struct BST *arvore_passada);
+
+
+
+
+void imprimirTeste(struct BST *arvore);
 
 #endif
