@@ -79,13 +79,20 @@ struct BST *inserirBST(struct BST *arvore_passada, int *valor_inserir);
  *          -2 PASSAR A ARVORE A QUAL DESEJA BUSCAR O NÓ DESEJADO
  *          -3 PASSAR VALOR/CHAVE DE BUSCA PARA ENCONTRAR O NÓ DA ARVORE PASSADA NO PARAMETRO 2
  */
-struct BST *buscarBST(struct BST *arvore_passada, int *valor_inserir);
+struct BST *buscarBST(struct BST *arvore_passada, int *valor_buscar);
 
 
 /** DEFINICAO PARA MANIPULACAO DA ARVORE 3
  *      - REMOVER NA ARVORE
  *          O QUE É PRECISO?
  *              CASOS DE USO:
+ *                  1 - buscar no com o valor desejado para remover
+ *                  2 - verificar casos base de remoção:
+ *                      2.1 - caso nao tenha filhos == remover o no
+ *                      2.2 - caso tenha 1 filho == passar o no filho para o pai do no a ser removido e remover o no desejado
+ *                      2.3 - caso tenha 2 filhos == navegar para a subarvore a esquerda obtendo o maior no a direita da subarvore
+ *                          2.3.1 - copiar o valor do maior no para o no que foi desejado remover
+ *                          2.3.2 - remover o maior no verificando os casos 2.1 e 2.2
  * 
  * 
  *      - PARAMETROS ESPERADOS
@@ -93,8 +100,9 @@ struct BST *buscarBST(struct BST *arvore_passada, int *valor_inserir);
  *          -2 PASSAR A ARVORE A QUAL DESEJA REMOVER O NÓ DESEJADO
  *          -3 PASSAR VALOR/CHAVE DE BUSCA PARA ENCONTRAR O NÓ DA ARVORE PASSADA NO PARAMETRO 2
  */
-struct BST *removerBST(struct BST *arvore_passada, int *valor_remover);
+struct BST *removerBST(struct BST *arvore_remover, int *valor_remover);
 
+struct BST *bucarMaiorNoDireitoSubarvoreEsquerda(struct BST *arvore);
 
 /** DEFINICAO PARA IMPRESSAO DE ARVORE 1
  *      - IMPRIMIR NA ARVORE
@@ -106,11 +114,10 @@ struct BST *removerBST(struct BST *arvore_passada, int *valor_remover);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-struct BST *imprimirBST(struct BST *arvore_passada);
+void imprimirPreOrderBST(struct BST *arvore_passada);
 
 
-
-/** DEFINICAO PARA IMPRESSAO DE ARVORE 1.1
+/** DEFINICAO PARA IMPRESSAO DE ARVORE 2
  *      - IMPRIMIR NA ARVORE
  *          O QUE É PRECISO?
  *              CASOS DE USO:
@@ -120,9 +127,10 @@ struct BST *imprimirBST(struct BST *arvore_passada);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-struct BST *imprimirPreOrderBST(struct BST *arvore_passada);
+void imprimirInOrderBST(struct BST *arvore_passada);
 
-/** DEFINICAO PARA IMPRESSAO DE ARVORE 1.2
+
+/** DEFINICAO PARA IMPRESSAO DE ARVORE 3
  *      - IMPRIMIR NA ARVORE
  *          O QUE É PRECISO?
  *              CASOS DE USO:
@@ -132,23 +140,6 @@ struct BST *imprimirPreOrderBST(struct BST *arvore_passada);
  *          -1 RETORNO == NENHUM RETORNO
  *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
  */
-struct BST *imprimirInOrderBST(struct BST *arvore_passada);
-
-/** DEFINICAO PARA IMPRESSAO DE ARVORE 1.3
- *      - IMPRIMIR NA ARVORE
- *          O QUE É PRECISO?
- *              CASOS DE USO:
- * 
- * 
- *      - PARAMETROS ESPERADOS
- *          -1 RETORNO == NENHUM RETORNO
- *          -2 PASSAR A ARVORE A QUAL DESEJA A IMPRESSAO DOS VALORES
- */
-struct BST *imprimirPosOrderBST(struct BST *arvore_passada);
-
-
-
-
-void imprimirTeste(struct BST *arvore);
+void imprimirPosOrderBST(struct BST *arvore_passada);
 
 #endif
